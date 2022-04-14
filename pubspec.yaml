@@ -1,0 +1,18 @@
+name: image_picker_jv
+description: is a package created for the need to implement the Image_picker library whit an interface.
+version: 0.0.1
+authors: Jeison Manuel Vargas Vargas.
+
+environment:
+  sdk: ">=2.17.0-69.2.beta <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  image_picker: ^0.8.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
