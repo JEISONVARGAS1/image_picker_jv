@@ -20,12 +20,15 @@ class ButtonAlertFrame extends StatelessWidget {
         horizontal: ScreenSize.height(context) * 0.03,
       ),
       child: Material(
+        elevation: 5,
         borderRadius: BorderRadius.circular(5),
         color: color,
         child: InkWell(
+          onTap: () {},
           child: Container(
             padding: EdgeInsets.symmetric(
-                vertical: ScreenSize.height(context) * 0.03),
+              vertical: ScreenSize.height(context) * 0.025,
+            ),
             alignment: Alignment.center,
             child: Text(text, style: textStyle),
           ),
