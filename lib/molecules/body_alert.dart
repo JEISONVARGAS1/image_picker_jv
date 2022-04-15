@@ -12,7 +12,7 @@ class BodyAlert extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
+        alertModel.activeButtonClose ? Container(
           alignment: Alignment.centerRight,
           child: GestureDetector(
             onTap: () => Navigator.pop(context),
@@ -21,7 +21,7 @@ class BodyAlert extends StatelessWidget {
               color: AppColor.black,
             ),
           ),
-        ),
+        ) : Container(),
         alertModel.title,
         alertModel.description,
         Row(
