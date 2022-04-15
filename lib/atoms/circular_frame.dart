@@ -63,7 +63,6 @@ class CircularFrame extends StatelessWidget {
             image: generateProviderImage(
               image: image,
               imageProvider: imageProvider,
-              cacheImageProvider: cacheImageProvider,
             ),
           ),
         );
