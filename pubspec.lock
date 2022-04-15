@@ -15,24 +15,24 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
-  cached_network_image:
+  :
     dependency: "direct dev"
     description:
-      name: cached_network_image
+      name:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.2.0"
-  cached_network_image_platform_interface:
+  _platform_interface:
     dependency: transitive
     description:
-      name: cached_network_image_platform_interface
+      name: _platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
-  cached_network_image_web:
+  _web:
     dependency: transitive
     description:
-      name: cached_network_image_web
+      name: _web
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
