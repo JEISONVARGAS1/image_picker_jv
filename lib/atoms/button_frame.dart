@@ -1,15 +1,17 @@
 import 'package:flutter/cupertino.dart';
-import 'package:image_picker_jv/tokens/app_color.dart';
+import 'package:flutter/material.dart';
 
 class ButtonFrame extends StatelessWidget {
+  final Icon? icon;
   final double size;
-  final IconData icon;
+  final Color color;
   final Function() handledButton;
 
   const ButtonFrame({
     Key? key,
+    this.icon,
     required this.size,
-    required this.icon,
+    required this.color,
     required this.handledButton,
   }) : super(key: key);
 
@@ -19,14 +21,15 @@ class ButtonFrame extends StatelessWidget {
       onTap: () => handledButton(),
       child: Container(
         padding: const EdgeInsets.all(4),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
+          color: color,
           shape: BoxShape.circle,
-          color: AppColor.white,
         ),
-        child: Icon(
-          icon,
-          size: size,
-        ),
+        child: icon ??
+            Icon(
+              Icons.camera,
+              size: size,
+            ),
       ),
     );
   }

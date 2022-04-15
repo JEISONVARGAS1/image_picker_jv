@@ -17,20 +17,20 @@ enum ImageProviderFrame {
 }
 
 class FrameImage extends StatelessWidget {
+  final Icon? icon;
   final Color color;
   final double size;
   final String image;
   final Widget? body;
-  final IconData icon;
   final ImageProviderFrame imageProvider;
   final TypeFigureFrameImage typeFigureFrameImage;
 
   const FrameImage(
     this.image, {
     Key? key,
+    this.icon,
     this.body,
     this.size = 100,
-    this.icon = Icons.camera_alt,
     this.color = AppColor.orange,
     this.imageProvider = ImageProviderFrame.assets,
     this.typeFigureFrameImage = TypeFigureFrameImage.circle,
@@ -49,7 +49,12 @@ class FrameImage extends StatelessWidget {
           imageProvider: imageProvider,
           typeFigureFrameImage: typeFigureFrameImage,
         ),
-        ButtonFrame(size: size / 4, icon: icon, handledButton: () {})
+        ButtonFrame(
+          size: size / 4,
+          icon: icon,
+          color: color,
+          handledButton: () {},
+        )
       ],
     );
   }
