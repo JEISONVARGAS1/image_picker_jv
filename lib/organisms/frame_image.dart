@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker_jv/atoms/button_frame.dart';
+import 'package:image_picker_jv/model/alert_model.dart';
+import 'package:image_picker_jv/molecules/body_alert.dart';
 import 'package:image_picker_jv/tokens/app_color.dart';
 import 'package:image_picker_jv/molecules/container_image_frame.dart';
+import 'package:image_picker_jv/tokens/show_alert.dart';
 
 enum TypeFigureFrameImage {
   square,
@@ -22,6 +25,8 @@ class FrameImage extends StatelessWidget {
   final double size;
   final String image;
   final Widget? body;
+  final Function()? onTap;
+  final AlertModel? alertModel;
   final ImageProviderFrame imageProvider;
   final TypeFigureFrameImage typeFigureFrameImage;
 
@@ -30,7 +35,9 @@ class FrameImage extends StatelessWidget {
     Key? key,
     this.icon,
     this.body,
+    this.onTap,
     this.size = 100,
+    this.alertModel,
     this.color = AppColor.orange,
     this.imageProvider = ImageProviderFrame.assets,
     this.typeFigureFrameImage = TypeFigureFrameImage.circle,
@@ -53,9 +60,35 @@ class FrameImage extends StatelessWidget {
           size: size / 4,
           icon: icon,
           color: color,
-          handledButton: () {},
+          handledButton: () {
+            if (onTap != null) {
+              onTap!();
+            } else {
+              _handledTapInButton(context: context);
+            }
+          },
         )
       ],
+    );
+  }
+
+  _handledTapInButton({
+    required BuildContext context,
+  }) {
+    showAlert(
+      body: BodyAlert(
+        alertModel: alertModel ??
+            AlertModel(
+              title: Container(),
+              description: Container(),
+            ),
+      ),
+      context: context,
+      alertModel: alertModel ??
+          AlertModel(
+            title: Container(),
+            description: Container(),
+          ),
     );
   }
 }
