@@ -19,6 +19,6 @@ DecorationImage generateProviderImage({
     case ImageProviderFrame.assets:
       return DecorationImage(fit: BoxFit.fill, image: AssetImage(image));
     case ImageProviderFrame.network:
-      return DecorationImage(fit: BoxFit.fill, image: cacheImageProvider!);
+      return DecorationImage(fit: BoxFit.fill, image: cacheImageProvider??NetworkImage(image));
   }
 }
