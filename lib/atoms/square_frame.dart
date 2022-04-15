@@ -28,7 +28,7 @@ class SquareFrame extends StatelessWidget {
       case ImageProviderFrame.assets:
         return _generateSimpleProvider();
       case ImageProviderFrame.network:
-        _generateCacheProvider();
+        return _generateSimpleProvider();
     }
   }
 

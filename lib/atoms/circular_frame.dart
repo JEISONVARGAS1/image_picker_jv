@@ -29,7 +29,7 @@ class CircularFrame extends StatelessWidget {
       case ImageProviderFrame.assets:
         return _generateSimpleProvider();
       case ImageProviderFrame.network:
-        _generateCacheProvider();
+        _generateSimpleProvider();
     }
   }
 
@@ -49,9 +49,7 @@ class CircularFrame extends StatelessWidget {
   }
 
   Widget _generateCacheProvider() {
-    return Container(
-      height: 100,
-      width: 100,); /*Shimmer.fromColors(
+    return Container(); /*Shimmer.fromColors(
       baseColor: AppColor.gray,
       highlightColor: AppColor.white,
       child: Container(
