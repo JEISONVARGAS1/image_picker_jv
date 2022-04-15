@@ -48,7 +48,10 @@ class SquareFrame extends StatelessWidget {
   }
 
   Widget _generateCacheProvider() {
-    return Container()/*Shimmer.fromColors(
+    return Container(
+      height: 100,
+      width: 100,
+    )/*Shimmer.fromColors(
       baseColor: AppColor.gray,
       highlightColor: AppColor.white,
       child: Container(
