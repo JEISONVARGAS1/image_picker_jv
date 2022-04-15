@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:image_picker_jv/tokens/app_color.dart';
 import 'package:image_picker_jv/model/alert_model.dart';
 import 'package:image_picker_jv/atoms/button_alert_frame.dart';
 
@@ -11,6 +12,16 @@ class BodyAlert extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Container(
+          alignment: Alignment.centerRight,
+          child: GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: const Icon(
+              Icons.close,
+              color: AppColor.black,
+            ),
+          ),
+        ),
         alertModel.title,
         alertModel.description,
         Row(
