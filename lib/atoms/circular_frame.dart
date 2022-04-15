@@ -29,7 +29,7 @@ class CircularFrame extends StatelessWidget {
       case ImageProviderFrame.assets:
         return _generateSimpleProvider();
       case ImageProviderFrame.network:
-        _generateSimpleProvider();
+        return _generateSimpleProvider();
     }
   }
 
@@ -40,10 +40,10 @@ class CircularFrame extends StatelessWidget {
       decoration: BoxDecoration(
         color: color,
         shape: BoxShape.circle,
-        /*image: generateProviderImage(
+        image: generateProviderImage(
           image: image,
           imageProvider: imageProvider,
-        ),*/
+        ),
       ),
     );
   }
