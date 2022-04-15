@@ -66,18 +66,20 @@ class CircularFrame extends StatelessWidget {
           ),
         ),
       ),
-      placeholder: (context, url) => Shimmer.fromColors(
-        baseColor: AppColor.gray,
-        highlightColor: AppColor.white,
-        child: Container(
-          width: size,
-          height: size,
-          decoration: BoxDecoration(
-            color: color,
-            shape: BoxShape.circle
+      placeholder: (context, url) {
+        return Shimmer.fromColors(
+          baseColor: AppColor.gray,
+          highlightColor: AppColor.white,
+          child: Container(
+            width: size,
+            height: size,
+            decoration: BoxDecoration(
+                color: color,
+                shape: BoxShape.circle
+            ),
           ),
-        ),
-      ),
+        );
+      },
       errorWidget: (context, url, error) => const Icon(
         Icons.error,
         color: AppColor.orange,
