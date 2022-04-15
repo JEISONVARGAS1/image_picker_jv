@@ -5,12 +5,14 @@ class ButtonAlertFrame extends StatelessWidget {
   final Color color;
   final String text;
   final TextStyle? textStyle;
+  final Function() handledOpenImagePicker;
 
   const ButtonAlertFrame({
     Key? key,
     required this.text,
     required this.color,
     required this.textStyle,
+    required this.handledOpenImagePicker,
   }) : super(key: key);
 
   @override
@@ -24,7 +26,7 @@ class ButtonAlertFrame extends StatelessWidget {
         borderRadius: BorderRadius.circular(5),
         color: color,
         child: InkWell(
-          onTap: () {},
+          onTap: () => handledOpenImagePicker(),
           child: Container(
             padding: EdgeInsets.symmetric(
               vertical: ScreenSize.height(context) * 0.025,

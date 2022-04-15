@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:image_picker_jv/atoms/button_frame.dart';
 import 'package:image_picker_jv/model/alert_model.dart';
 import 'package:image_picker_jv/molecules/body_alert.dart';
@@ -27,6 +28,7 @@ class FrameImage extends StatelessWidget {
   final Widget? body;
   final Function()? onTap;
   final AlertModel? alertModel;
+  final Function(String) callBackPath;
   final ImageProviderFrame imageProvider;
   final TypeFigureFrameImage typeFigureFrameImage;
 
@@ -38,6 +40,7 @@ class FrameImage extends StatelessWidget {
     this.onTap,
     this.size = 100,
     this.alertModel,
+    required this.callBackPath,
     this.color = AppColor.orange,
     this.imageProvider = ImageProviderFrame.assets,
     this.typeFigureFrameImage = TypeFigureFrameImage.circle,
@@ -82,6 +85,7 @@ class FrameImage extends StatelessWidget {
               title: Container(),
               description: Container(),
             ),
+        handledOpenImagePicker: _handledOpenImagePicker,
       ),
       context: context,
       alertModel: alertModel ??
@@ -90,5 +94,19 @@ class FrameImage extends StatelessWidget {
             description: Container(),
           ),
     );
+  }
+
+  _handledOpenImagePicker(bool isCamera) async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? image;
+    if (isCamera) {
+      image = await _picker.pickImage(source: ImageSource.camera);
+    } else {
+      image = await _picker.pickImage(source: ImageSource.gallery);
+    }
+
+    if (image != null) {
+      callBackPath(image.path);
+    }
   }
 }

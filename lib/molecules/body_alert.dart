@@ -6,24 +6,32 @@ import 'package:image_picker_jv/tokens/screen_size.dart';
 
 class BodyAlert extends StatelessWidget {
   final AlertModel alertModel;
+  final Function(bool) handledOpenImagePicker;
 
-  const BodyAlert({Key? key, required this.alertModel}) : super(key: key);
+  const BodyAlert({
+    Key? key,
+    required this.alertModel,
+    required this.handledOpenImagePicker,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        alertModel.activeButtonClose ? Container(
-          alignment: Alignment.centerRight,
-          margin: EdgeInsets.symmetric(horizontal: ScreenSize.width(context) * 0.03),
-          child: GestureDetector(
-            onTap: () => Navigator.pop(context),
-            child: const Icon(
-              Icons.close,
-              color: AppColor.black,
-            ),
-          ),
-        ) : Container(),
+        alertModel.activeButtonClose
+            ? Container(
+                alignment: Alignment.centerRight,
+                margin: EdgeInsets.symmetric(
+                    horizontal: ScreenSize.width(context) * 0.03),
+                child: GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: const Icon(
+                    Icons.close,
+                    color: AppColor.black,
+                  ),
+                ),
+              )
+            : Container(),
         alertModel.title,
         alertModel.description,
         Row(
@@ -33,6 +41,7 @@ class BodyAlert extends StatelessWidget {
                 text: "Photo",
                 color: alertModel.colorButton,
                 textStyle: alertModel.textStyle,
+                  handledOpenImagePicker:()=> handledOpenImagePicker(true)
               ),
             ),
             Expanded(
@@ -40,6 +49,7 @@ class BodyAlert extends StatelessWidget {
                 text: "Gallery",
                 color: alertModel.colorButton,
                 textStyle: alertModel.textStyle,
+                  handledOpenImagePicker:()=> handledOpenImagePicker(false)
               ),
             ),
           ],
