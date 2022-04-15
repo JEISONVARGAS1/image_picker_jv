@@ -25,13 +25,13 @@ class ContainerImageFrame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     switch (typeFigureFrameImage) {
-      case TypeFigureFrameImage.square:
+      case TypeFigureFrameImage.circle:
         return CircularFrame(
             size: size,
             color: color,
             image: image,
             imageProvider: imageProvider);
-      case TypeFigureFrameImage.circle:
+      case TypeFigureFrameImage.square:
         return SquareFrame(
           size: size,
           color: color,

@@ -42,7 +42,7 @@ class FrameImage extends StatelessWidget {
     this.alertModel,
     required this.callBackPath,
     this.color = AppColor.orange,
-    this.imageProvider = ImageProviderFrame.assets,
+    this.imageProvider = ImageProviderFrame.network,
     this.typeFigureFrameImage = TypeFigureFrameImage.circle,
   }) : super(key: key);
 
