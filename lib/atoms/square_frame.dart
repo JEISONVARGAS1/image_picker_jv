@@ -2,7 +2,6 @@ import 'package:shimmer/shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker_jv/tokens/app_color.dart';
 import 'package:image_picker_jv/organisms/frame_image.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:image_picker_jv/tokens/generate_provider_image.dart';
 
 class SquareFrame extends StatelessWidget {
@@ -51,7 +50,22 @@ class SquareFrame extends StatelessWidget {
   }
 
   Widget _generateCacheProvider() {
-    return CachedNetworkImage(
+    return Shimmer.fromColors(
+      baseColor: AppColor.gray,
+      highlightColor: AppColor.white,
+      child: Container(
+        width: size,
+        height: size,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(5),
+          image: generateProviderImage(
+            image: image,
+            imageProvider: imageProvider,
+          ),
+        ),
+      ),
+    );/*CachedNetworkImage(
       imageUrl: image,
       imageBuilder: (context, cacheImageProvider) => Container(
         width: size,
@@ -87,6 +101,6 @@ class SquareFrame extends StatelessWidget {
         Icons.error,
         color: AppColor.orange,
       ),
-    );
+    )*/;
   }
 }
