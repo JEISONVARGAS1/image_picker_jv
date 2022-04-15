@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker_jv/tokens/app_color.dart';
 import 'package:image_picker_jv/model/alert_model.dart';
 import 'package:image_picker_jv/atoms/button_alert_frame.dart';
+import 'package:image_picker_jv/tokens/screen_size.dart';
 
 class BodyAlert extends StatelessWidget {
   final AlertModel alertModel;
@@ -14,6 +15,7 @@ class BodyAlert extends StatelessWidget {
       children: [
         alertModel.activeButtonClose ? Container(
           alignment: Alignment.centerRight,
+          margin: EdgeInsets.symmetric(horizontal: ScreenSize.width(context) * 0.02),
           child: GestureDetector(
             onTap: () => Navigator.pop(context),
             child: const Icon(
