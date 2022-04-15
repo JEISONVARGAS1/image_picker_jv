@@ -9,7 +9,7 @@ enum TypeFigureFrameImage {
   noneFigureFrame,
 }
 
-enum ImageProvider {
+enum ImageProviderFrame {
   file,
   assets,
   network,
@@ -20,7 +20,7 @@ class FrameImage extends StatelessWidget {
   final double size;
   final String image;
   final Widget? body;
-  final ImageProvider imageProvider;
+  final ImageProviderFrame imageProvider;
   final TypeFigureFrameImage typeFigureFrameImage;
 
   const FrameImage(
@@ -29,7 +29,7 @@ class FrameImage extends StatelessWidget {
     this.body,
     this.size = 100,
     this.color = AppColor.orange,
-    this.imageProvider = ImageProvider.assets,
+    this.imageProvider = ImageProviderFrame.assets,
     this.typeFigureFrameImage = TypeFigureFrameImage.circle,
   }) : super(key: key);
 
@@ -71,11 +71,11 @@ class FrameImage extends StatelessWidget {
 
   DecorationImage generateProviderImage() {
     switch (imageProvider) {
-      case ImageProvider.file:
+      case ImageProviderFrame.file:
         return DecorationImage(image: FileImage(File(image)));
-      case ImageProvider.assets:
+      case ImageProviderFrame.assets:
         return DecorationImage(image: AssetImage(image));
-      case ImageProvider.network:
+      case ImageProviderFrame.network:
         return DecorationImage(image: NetworkImage(image));
     }
   }
