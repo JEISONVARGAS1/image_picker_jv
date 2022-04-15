@@ -5,6 +5,7 @@ import 'package:image_picker_jv/organisms/frame_image.dart';
 
 DecorationImage generateProviderImage({
   required String image,
+  ImageProvider? cacheImageProvider,
   required ImageProviderFrame imageProvider,
 }) {
   switch (imageProvider) {
@@ -18,6 +19,6 @@ DecorationImage generateProviderImage({
     case ImageProviderFrame.assets:
       return DecorationImage(fit: BoxFit.fill, image: AssetImage(image));
     case ImageProviderFrame.network:
-      return DecorationImage(fit: BoxFit.fill, image: NetworkImage(image));
+      return DecorationImage(fit: BoxFit.fill, image: cacheImageProvider!);
   }
 }

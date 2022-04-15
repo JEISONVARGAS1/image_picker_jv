@@ -1,12 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:image_picker_jv/atoms/button_frame.dart';
-import 'package:image_picker_jv/model/alert_model.dart';
-import 'package:image_picker_jv/molecules/body_alert.dart';
 import 'package:image_picker_jv/tokens/app_color.dart';
-import 'package:image_picker_jv/molecules/container_image_frame.dart';
+import 'package:image_picker_jv/model/alert_model.dart';
 import 'package:image_picker_jv/tokens/show_alert.dart';
+import 'package:image_picker_jv/atoms/button_frame.dart';
+import 'package:image_picker_jv/molecules/body_alert.dart';
+import 'package:image_picker_jv/molecules/container_image_frame.dart';
 
 enum TypeFigureFrameImage {
   square,
@@ -85,7 +85,7 @@ class FrameImage extends StatelessWidget {
               title: Container(),
               description: Container(),
             ),
-        handledOpenImagePicker: _handledOpenImagePicker,
+        handledOpenImagePicker:(bool isCamera)=> _handledOpenImagePicker(isCamera, context),
       ),
       context: context,
       alertModel: alertModel ??
@@ -96,7 +96,7 @@ class FrameImage extends StatelessWidget {
     );
   }
 
-  _handledOpenImagePicker(bool isCamera) async {
+  _handledOpenImagePicker(bool isCamera, context) async {
     final ImagePicker _picker = ImagePicker();
     final XFile? image;
     if (isCamera) {
@@ -106,6 +106,7 @@ class FrameImage extends StatelessWidget {
     }
 
     if (image != null) {
+      Navigator.pop(context);
       callBackPath(image.path);
     }
   }
