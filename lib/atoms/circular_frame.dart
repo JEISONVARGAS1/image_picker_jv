@@ -1,7 +1,7 @@
 /*import 'package:shimmer/shimmer.dart';*/
 import 'package:flutter/material.dart';
-import 'package:image_picker_jv/organisms/frame_image.dart';
 import 'package:image_picker_jv/tokens/app_color.dart';
+import 'package:image_picker_jv/organisms/frame_image.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:image_picker_jv/tokens/generate_provider_image.dart';
 
@@ -53,19 +53,21 @@ class CircularFrame extends StatelessWidget {
   Widget _generateCacheProvider() {
     return CachedNetworkImage(
       imageUrl: image,
-      imageBuilder: (context, cacheImageProvider) => Container(
-        width: size,
-        height: size,
-        decoration: BoxDecoration(
-          color: color,
-          shape: BoxShape.circle,
-          image: generateProviderImage(
-            image: image,
-            imageProvider: imageProvider,
-            cacheImageProvider: cacheImageProvider,
+      imageBuilder: (context, cacheImageProvider) {
+        return Container(
+          width: size,
+          height: size,
+          decoration: BoxDecoration(
+            color: color,
+            shape: BoxShape.circle,
+            image: generateProviderImage(
+              image: image,
+              imageProvider: imageProvider,
+              cacheImageProvider: cacheImageProvider,
+            ),
           ),
-        ),
-      ),
+        );
+      },
       placeholder: (context, url) {
         return Container();
       },
