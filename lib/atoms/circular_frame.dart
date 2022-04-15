@@ -31,7 +31,7 @@ class CircularFrame extends StatelessWidget {
       case ImageProviderFrame.assets:
         return _generateSimpleProvider();
       case ImageProviderFrame.network:
-        return _generateSimpleProvider();
+        return _generateCacheProvider();
     }
   }
 
