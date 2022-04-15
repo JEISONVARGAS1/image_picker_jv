@@ -9,6 +9,7 @@ enum AlertButtonType {
 
 class AlertModel {
   AlertModel({
+    this.textStyle,
     this.width = 200,
     this.height = 200,
     required this.title,
@@ -23,6 +24,7 @@ class AlertModel {
   double width;
   double height;
   Widget description;
+  TextStyle? textStyle;
   bool activeButtonClose;
   AlertButtonType alertButtonType;
 
