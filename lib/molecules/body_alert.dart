@@ -15,7 +15,7 @@ class BodyAlert extends StatelessWidget {
       children: [
         alertModel.activeButtonClose ? Container(
           alignment: Alignment.centerRight,
-          margin: EdgeInsets.symmetric(horizontal: ScreenSize.width(context) * 0.02),
+          margin: EdgeInsets.symmetric(horizontal: ScreenSize.width(context) * 0.03),
           child: GestureDetector(
             onTap: () => Navigator.pop(context),
             child: const Icon(
