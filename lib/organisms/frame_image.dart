@@ -39,6 +39,7 @@ class FrameImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.bottomRight,
       children: [
         ContainerImageFrame(
           image,

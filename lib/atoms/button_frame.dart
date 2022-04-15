@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:image_picker_jv/tokens/app_color.dart';
 
 class ButtonFrame extends StatelessWidget {
   final double size;
@@ -20,6 +21,7 @@ class ButtonFrame extends StatelessWidget {
         padding: const EdgeInsets.all(4),
         decoration: const BoxDecoration(
           shape: BoxShape.circle,
+          color: AppColor.white,
         ),
         child: Icon(
           icon,
