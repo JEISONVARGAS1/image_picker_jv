@@ -18,14 +18,14 @@ class BodyAlert extends StatelessWidget {
             Expanded(
               child: ButtonAlertFrame(
                 text: "Photo",
-                color: alertModel.color,
+                color: alertModel.colorButton,
                 textStyle: alertModel.textStyle,
               ),
             ),
             Expanded(
               child: ButtonAlertFrame(
                 text: "Gallery",
-                color: alertModel.color,
+                color: alertModel.colorButton,
                 textStyle: alertModel.textStyle,
               ),
             ),

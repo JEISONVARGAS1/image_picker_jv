@@ -15,6 +15,7 @@ class AlertModel {
     required this.title,
     required this.description,
     this.color = AppColor.white,
+    this.colorButton = AppColor.white,
     this.activeButtonClose = true,
     this.alertButtonType = AlertButtonType.allButton,
   });
@@ -23,6 +24,7 @@ class AlertModel {
   Widget title;
   double width;
   double height;
+  Color colorButton;
   Widget description;
   TextStyle? textStyle;
   bool activeButtonClose;
