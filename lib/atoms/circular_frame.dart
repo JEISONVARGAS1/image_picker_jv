@@ -40,10 +40,10 @@ class CircularFrame extends StatelessWidget {
       decoration: BoxDecoration(
         color: color,
         shape: BoxShape.circle,
-        image: generateProviderImage(
+        /*image: generateProviderImage(
           image: image,
           imageProvider: imageProvider,
-        ),
+        ),*/
       ),
     );
   }

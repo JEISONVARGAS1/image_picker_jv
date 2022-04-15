@@ -39,10 +39,10 @@ class SquareFrame extends StatelessWidget {
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(5),
-        image: generateProviderImage(
+        /*image: generateProviderImage(
           image: image,
           imageProvider: imageProvider,
-        ),
+        ),*/
       ),
     );
   }
