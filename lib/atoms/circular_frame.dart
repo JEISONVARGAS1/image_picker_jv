@@ -1,7 +1,9 @@
-/*import 'package:shimmer/shimmer.dart';*/
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:image_picker_jv/organisms/frame_image.dart';
+import 'package:image_picker_jv/tokens/app_color.dart';
 import 'package:image_picker_jv/tokens/generate_provider_image.dart';
+import 'package:shimmer/shimmer.dart';
+
 
 class CircularFrame extends StatelessWidget {
   final double size;
@@ -52,7 +54,7 @@ class CircularFrame extends StatelessWidget {
   }
 
   Widget _generateCacheProvider() {
-    return Container(); /*Shimmer.fromColors(
+    return Shimmer.fromColors(
       baseColor: AppColor.gray,
       highlightColor: AppColor.white,
       child: Container(
@@ -63,7 +65,7 @@ class CircularFrame extends StatelessWidget {
             shape: BoxShape.circle
         ),
       ),
-    );*/ /*CachedNetworkImage(
+    ); /*CachedNetworkImage(
       imageUrl: image,
       imageBuilder: (context, cacheImageProvider) => Container(
         width: size,
